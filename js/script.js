@@ -1,4 +1,5 @@
-
+let pScore = 0;
+let cScore = 0;
 //Buttons
 buttonRock = document.getElementById('button-rock');
 buttonPaper = document.getElementById('button-paper');
@@ -30,25 +31,38 @@ function buttonClicked(argButtonName) {
 	computerMove = getMoveName(randomNumber);
 	console.log('ruch komputera to: ' + computerMove);
 
+	let updateScore = function () {
+		let playerScore = document.querySelector(".player-score p")
+		let computerScore = document.querySelector(".computer-score p")
+		playerScore.innerHTML = pScore;
+		computerScore.innerHTML = cScore;
+	}
+
 	//Result game
 	function displayResult(argPlayerMove, argComputerMove){
 		if(argPlayerMove == 'papier' && argComputerMove == 'kamień'){
-	 		printMessage('Wygrywasz!');
+			 printMessage('Wygrywasz!');
+			 pScore++;
+			 updateScore();
 		} else if(argPlayerMove == argComputerMove){
 			printMessage('Remis');
 		} else if(argPlayerMove == 'nożyce' && argComputerMove == 'papier'){
 			printMessage('Wygrywasz!')
+			pScore++;
+			updateScore();
 		} else if(argPlayerMove == 'kamień' && argComputerMove == "nożyce"){
 			printMessage('Wygrywasz!')
+			pScore++;
+			updateScore();
 		}else {
-	  	printMessage('Przegrywasz :(');
+			printMessage('Przegrywasz :(');
+			cScore++;
+			updateScore();
 		}
-		printMessage('Gdyż ponieważ zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
+			printMessage('Gdyż ponieważ zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
   	}
 	displayResult(playerMove, computerMove);
   };
   buttonRock.addEventListener('click', function(){ buttonClicked('kamień'); });
-  
   buttonPaper.addEventListener('click', function(){ buttonClicked('papier'); });
-
   buttonScissors.addEventListener('click', function(){ buttonClicked('nożyce'); });
