@@ -1,0 +1,78 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.637), rgba(0, 0, 0, 0.534)), url("https://i.postimg.cc/d0tNyYdJ/2573474.jpg");
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  color: #dfdae6;
+  font-size: 23px;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  letter-spacing: 3px;
+}
+
+.main h1 {
+  position: absolute;
+  left: 50%;
+  top: 8%;
+  transform: translate(-50%, -50%);
+  font-size: 35px;
+}
+
+.main h3 {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color: #4172ee;
+}
+
+.main .container {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%, -50%);
+}
+
+.main .container button i {
+  font-size: 70px;
+  padding: 12px;
+}
+
+.main .score {
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .player-score {
+  -ms-flex: 1;
+      flex: 1;
+}
+
+.main .computer-score {
+  -ms-flex: 1;
+      flex: 1;
+}
+
+@media (max-width: 680px) {
+  .main .container button i {
+    font-size: 34px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
