@@ -1,9 +1,15 @@
+//Buttons
+const buttonRock = document.getElementById('button-rock');
+const buttonPaper = document.getElementById('button-paper');
+const buttonScissors = document.getElementById('button-scissors');
+
+buttonRock.addEventListener('click', function(){ buttonClicked('kamień'); });
+buttonPaper.addEventListener('click', function(){ buttonClicked('papier'); });
+buttonScissors.addEventListener('click', function(){ buttonClicked('nożyce'); });
+
+// Score
 let pScore = 0;
 let cScore = 0;
-//Buttons
-buttonRock = document.getElementById('button-rock');
-buttonPaper = document.getElementById('button-paper');
-buttonScissors = document.getElementById('button-scissors');
 
 //Game
 function buttonClicked(argButtonName) {
@@ -23,14 +29,15 @@ function buttonClicked(argButtonName) {
 		}
   	}
 	//Player
-	playerMove = argButtonName;
+	const playerMove = argButtonName;
 
 	//Computer
-	randomNumber = Math.floor(Math.random() * 3 + 1);
+	let randomNumber = Math.floor(Math.random() * 3 + 1);
 	console.log('wylosowana liczba to: ' + randomNumber);
-	computerMove = getMoveName(randomNumber);
+	let computerMove = getMoveName(randomNumber);
 	console.log('ruch komputera to: ' + computerMove);
 
+	// Score function
 	let updateScore = function () {
 		let playerScore = document.querySelector(".player-score p")
 		let computerScore = document.querySelector(".computer-score p")
@@ -63,6 +70,3 @@ function buttonClicked(argButtonName) {
   	}
 	displayResult(playerMove, computerMove);
   };
-  buttonRock.addEventListener('click', function(){ buttonClicked('kamień'); });
-  buttonPaper.addEventListener('click', function(){ buttonClicked('papier'); });
-  buttonScissors.addEventListener('click', function(){ buttonClicked('nożyce'); });
